@@ -280,6 +280,7 @@ Node data was retrieved successfully.`,
             if (node.layoutMode) {
               simplified.layout = {
                 mode: node.layoutMode, // HORIZONTAL, VERTICAL, NONE
+                wrap: node.layoutWrap, // WRAP, NO_WRAP
                 padding: node.paddingLeft || node.paddingTop ? {
                   top: node.paddingTop,
                   right: node.paddingRight,
@@ -290,6 +291,26 @@ Node data was retrieved successfully.`,
                 align: node.primaryAxisAlignItems,
                 justify: node.counterAxisAlignItems,
               };
+            }
+
+            // Add child sizing behavior within parent auto-layout (HUG / FILL / FIXED)
+            if (node.layoutSizingHorizontal || node.layoutSizingVertical) {
+              simplified.sizing = {
+                horizontal: node.layoutSizingHorizontal,
+                vertical: node.layoutSizingVertical,
+              };
+            }
+
+            // Add positioning mode within parent auto-layout (AUTO / ABSOLUTE)
+            if (node.layoutPositioning && node.layoutPositioning !== 'AUTO') {
+              simplified.positioning = node.layoutPositioning;
+              // Include coordinates for absolutely positioned nodes
+              if (node.absoluteBoundingBox) {
+                simplified.position = {
+                  x: Math.round(node.absoluteBoundingBox.x),
+                  y: Math.round(node.absoluteBoundingBox.y),
+                };
+              }
             }
 
             // Add corner radius
