@@ -19,10 +19,10 @@ const args = process.argv.slice(2);
 if (args.includes('--version') || args.includes('-v')) {
   try {
     const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
-    console.error(`@sk/figma-context-mcp v${packageJson.version}`);
+    console.error(`figma-context-mcp v${packageJson.version}`);
     process.exit(0);
   } catch (error) {
-    console.error('@sk/figma-context-mcp (version unknown)');
+    console.error('figma-context-mcp (version unknown)');
     process.exit(0);
   }
 }
@@ -30,7 +30,7 @@ if (args.includes('--version') || args.includes('-v')) {
 // Handle --help flag
 if (args.includes('--help') || args.includes('-h')) {
   console.error(`
-@sk/figma-context-mcp - AI-powered Figma to Code conversion
+figma-context-mcp - AI-powered Figma to Code conversion
 
 Usage:
   figma-context-mcp [options]
