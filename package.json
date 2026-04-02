@@ -1,7 +1,7 @@
 {
   "name": "figma-context-mcp",
   "version": "1.0.0",
-  "description": "MCP server that converts Figma designs to production-ready HTML + Tailwind CSS code",
+  "description": "MCP server that converts Figma designs to prompt context for AI agents",
   "main": "build/index.js",
   "type": "module",
   "bin": {

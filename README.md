@@ -10,8 +10,14 @@ An [MCP server](https://modelcontextprotocol.io/) that enables AI assistants to 
 
 ## Quickstart
 
-### 1. Clone and build
+### 1. Install
 
+**Global install (recommended):**
+```bash
+npm install -g figma-context-mcp
+```
+
+**Or clone and build locally:**
 ```bash
 git clone https://github.com/cola-sk/figma-mcp.git
 cd figma-context-mcp
@@ -31,8 +37,7 @@ Edit `.vscode/mcp.json` in your project root:
   "servers": {
     "figma-context-mcp": {
       "type": "stdio",
-      "command": "node",
-      "args": ["/path/to/figma-context-mcp/build/index.js"],
+      "command": "figma-context-mcp",
       "env": {
         "FIGMA_ACCESS_TOKEN": "YOUR_PERSONAL_FIGMA_ACCESS_TOKEN"
       }
@@ -49,8 +54,7 @@ Edit `claude_desktop_config.json`:
   "mcpServers": {
     "figma-context-mcp": {
       "type": "stdio",
-      "command": "node",
-      "args": ["/path/to/figma-context-mcp/build/index.js"],
+      "command": "figma-context-mcp",
       "env": {
         "FIGMA_ACCESS_TOKEN": "YOUR_PERSONAL_FIGMA_ACCESS_TOKEN"
       }
@@ -67,8 +71,7 @@ Edit `mcp.json`:
   "mcpServers": {
     "figma-context-mcp": {
       "type": "stdio",
-      "command": "node",
-      "args": ["/path/to/figma-context-mcp/build/index.js"],
+      "command": "figma-context-mcp",
       "env": {
         "FIGMA_ACCESS_TOKEN": "YOUR_PERSONAL_FIGMA_ACCESS_TOKEN"
       }
