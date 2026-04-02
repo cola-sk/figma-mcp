@@ -34,7 +34,7 @@ figma-context-mcp - AI-powered Figma to Code conversion
 
 Usage:
   figma-context-mcp [options]
-  npx @sk/figma-context-mcp [options]
+  npx @sking7/figma-context-mcp [options]
 
 Options:
   --mode <stdio|http>   Transport mode (default: stdio)
@@ -44,13 +44,13 @@ Options:
 
 Examples:
   # Run in stdio mode (for Claude Desktop, Cursor)
-  npx @sk/figma-context-mcp
+  npx @sking7/figma-context-mcp
 
   # Run in HTTP server mode on port 3000
-  npx @sk/figma-context-mcp --mode http --port 3000
+  npx @sking7/figma-context-mcp --mode http --port 3000
 
   # Show version
-  npx figma-context-mcp --version
+  npx @sking7/figma-context-mcp --version
 `);
   process.exit(0);
 }
